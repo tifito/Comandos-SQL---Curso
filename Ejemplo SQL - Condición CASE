@@ -13,7 +13,7 @@ CASE
     ELSE instrucciones
 END CASE;
 EJEMPLO CASE (Línea 19 al 35)
-/*
+*/
 
 
 DROP PROCEDURE insert_curso;
