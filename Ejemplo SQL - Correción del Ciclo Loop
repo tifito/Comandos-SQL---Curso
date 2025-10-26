@@ -1,0 +1,21 @@
+create procedure bucle()
+begin
+	declare contador int;
+    declare resultado varchar(50);
+	set contador = 1;
+    set resultado = '';
+
+	bucle1: LOOP
+        set resultado = concat(resultado, '-', contador);
+        set contador = contador + 1;
+
+        if contador > 10 then
+			leave bucle1;
+		end if;
+	end loop;
+
+	select resultado;
+end//
+
+
+call bucle()//
