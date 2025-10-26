@@ -1,0 +1,22 @@
+delimiter //
+drop procedure if exists bucle_repeat//  
+create procedure bucle_repeat()        
+begin
+	declare contador int;           
+    declare resultado varchar(50);   
+    set contador=1;                
+    set resultado=' ';               
+    
+    bucle1: REPEAT                        -- Inicio del bucle REPEAT con etiqueta
+		set resultado=concat(resultado,'-', contador);  
+        set contador=contador+1;
+        if contador=6 then                -- Sale del bucle cuando contador llega a 6
+			leave bucle1;                 
+		end if;
+	UNTIL contador=11                     -- Condición que NO se cumple
+    END REPEAT;
+    
+    select resultado;              
+end//
+
+call bucle_repeat()//
