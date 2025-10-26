@@ -1,0 +1,29 @@
+/* Ejemplo 1 LOOP
+Bucle LOOP
+etiqueta:LOOP
+	instrucciones;      --Para dejar el bucle
+    LEAVE etiqueta;		-- Para volver al principio del bucle
+END LOOP;
+
+
+--contador
+*/
+
+delimiter //
+drop procedure bucle//
+
+create procedure bucle()
+begin
+	declare contador int;
+	set contador=1;
+    
+    bucle1: LOOP
+		select contador;
+		set contador =contador+1;
+        if contador >10 then
+			leave bucle1;
+		end if;
+	end loop;
+end//
+
+call bucle()//
