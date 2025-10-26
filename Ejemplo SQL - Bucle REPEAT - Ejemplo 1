@@ -1,0 +1,30 @@
+/* BUCLE repeat
+	
+	etiqueta: REPEAT
+     instrucciones;	
+       LEAVE etiqueta; -- Para dejar el bucle
+       ITERATE etiqueta; -- Para volver al principio del bucle
+	UNTIL condicion
+    END REPEAT;
+    */
+    
+
+delimiter //
+drop procedure if exists bucle_repeat//   -- Borra el proceso si ya existe
+create procedure bucle_repeat()           -- Crea el proceso bucle_repeat()
+begin
+	declare contador int;            -- Contador del bucle
+    declare resultado varchar(50);   -- Guarda los valores concatenados
+    set contador=1;                  -- Inicia en 1
+    set resultado=' ';               -- Resultado vacío
+    
+    REPEAT                           -- AQUÍ inicia el bucle REPEAT y se ejecuta al menos una vez
+		set resultado=concat(resultado,'-', contador);  -- Agrega el número actual
+        set contador=contador+1;                        -- Incrementa el contador
+	UNTIL contador=11                -- Condición AL FINAL para detener el bucle
+    END REPEAT;
+    
+    select resultado;                -- Muestra los números del 1 al 10
+end//
+
+call bucle_repeat()//				-- Ejecuta el procedimiento
