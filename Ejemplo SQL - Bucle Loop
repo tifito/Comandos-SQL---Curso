@@ -6,24 +6,25 @@ etiqueta:LOOP
 END LOOP;
 
 
---contador
+
 */
 
-delimiter //
-drop procedure bucle//
+delimiter //                             -- Cambia el delimitador temporalmente
+drop procedure bucle//                   -- Elimina el procedimiento si ya existe
 
-create procedure bucle()
+create procedure bucle()                 -- Crea el procedimiento llamado "bucle"
 begin
-	declare contador int;
-	set contador=1;
+	declare contador int;                -- Declara la variable contador
+	set contador = 1;                    -- Inicializa contador en 1
     
-    bucle1: LOOP
-		select contador;
-		set contador =contador+1;
-        if contador >10 then
-			leave bucle1;
+    bucle1: LOOP                         -- Inicia un bucle con la etiqueta bucle1
+		select contador;                 -- Muestra el valor actual del contador
+		set contador = contador + 1;     -- Aumenta el contador en 1
+        if contador > 10 then            -- Verifica si el contador pasa de 10
+			leave bucle1;                -- Sale del bucle si la condición se cumple
 		end if;
-	end loop;
-end//
+	end loop;                            -- Fin del bucle
+end//                                    -- Fin del procedimiento
 
-call bucle()//
+call bucle()//                           -- Ejecuta el procedimiento
+
