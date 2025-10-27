@@ -1,11 +1,11 @@
-/* Estructura CASE
+/* Estructura CASE 1 
 CASE expresion
 	When valor1 then instrucciones;
     When valor2 then instrucciones;
     When valor3 then instrucciones;
     ELSE instrucciones
 END CASE;
-
+	Estructura CASE 2
 CASE 
 	When expresion1 then instrucciones;
     When expresion2 then instrucciones;
