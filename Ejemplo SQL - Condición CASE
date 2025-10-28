@@ -1,35 +1,18 @@
-/* Estructura CASE 1 
-CASE expresion
-	When valor1 then instrucciones;
-    When valor2 then instrucciones;
-    When valor3 then instrucciones;
-    ELSE instrucciones
-END CASE;
-	Estructura CASE 2
-CASE 
-	When expresion1 then instrucciones;
-    When expresion2 then instrucciones;
-    When expresion3 then instrucciones;
-    ELSE instrucciones
-END CASE;
-EJEMPLO CASE (Línea 19 al 35)
-*/
-
-
-DROP PROCEDURE insert_curso;
+DROP PROCEDURE insert_curso;                  -- DROP PROCEDURE borra el procedimiento anterior para que no haya algún error.
 delimiter //
-CREATE PROCEDURE insert_curso(p_codigo int, p_nombre varchar(50), p_precio decimal)
+
+CREATE PROCEDURE insert_curso(p_codigo int, p_nombre varchar(50), p_precio decimal)  -- CREATE PROCEDURE crea un nuevo proceso.
 begin
-case
-    when p_precio<100 then
-        select 'Precio no puede ser inferior a 100';
-    when p_precio >300 then
-        select 'Precio no puede ser superior a 300';
-    else
-        insert into cursos values(p_codigo,p_nombre,p_precio);
-    end case;
+	case                                       -- A diferencia del IF, este inicia con “case” y las condiciones se verifican con “when”.
+		when p_precio < 100 then
+			select 'Precio no puede ser inferior a 100';
+		when p_precio > 300 then
+			select 'Precio no puede ser superior a 300';
+		else
+			insert into cursos values(p_codigo, p_nombre, p_precio);	-- Si las condiciones no se cumplen, entonces se inserta el curso.
+	end case;                                 -- Se sustituye el end “if” por end “case” para terminar el procedimiento.
 end //
 delimiter ;
 
-call insert_curso(134,'Curso130',151);
-select * FROM CURSOS;
+call insert_curso(134, 'Curso130', 151);      -- La forma de insertar cursos sigue siendo la misma.
+select * from cursos;                        -- Muestra todos los cursos guardados
