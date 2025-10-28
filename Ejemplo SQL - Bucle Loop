@@ -1,13 +1,3 @@
-/* Ejemplo  LOOP
-Bucle LOOP
-etiqueta:LOOP
-	instrucciones;      --Para dejar el bucle
-    LEAVE etiqueta;		-- Para volver al principio del bucle
-END LOOP;
-
-
-
-*/
 
 delimiter //                             -- Cambia el delimitador temporalmente
 drop procedure bucle//                   -- Elimina el procedimiento si ya existe
