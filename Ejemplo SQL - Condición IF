@@ -1,18 +1,4 @@
-/* Estructura IF
-If condicion
-	Then instrucciones
-END IF;
-
-If Condición
-	THEN instrucciones
-    ELSEIF condicion THEN instrucciones
-    
-    ELSE instrucciones
-END IF;
-Ejemplo IF( línea 17 a 34)
-*/
-
-
+-- Ejemplo IF
 
 DROP PROCEDURE insert_curso;
 
