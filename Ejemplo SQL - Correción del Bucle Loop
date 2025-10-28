@@ -1,21 +1,21 @@
-create procedure bucle()
+create procedure bucle()                        -- Crea un procedimiento llamado 'bucle'
 begin
-	declare contador int;
-    declare resultado varchar(50);
-	set contador = 1;
-    set resultado = '';
+	declare contador int;                       -- Declara una variable entera llamada 'contador'
+    declare resultado varchar(50);              -- Declara una variable tipo texto llamada 'resultado'
+	set contador = 1;                           -- Inicializa el contador en 1
+    set resultado = '';                         -- Inicializa resultado como cadena vacía
 
-	bucle1: LOOP
-        set resultado = concat(resultado, '-', contador);
-        set contador = contador + 1;
+	bucle1: LOOP                                -- Crea una etiqueta llamada 'bucle1'
+        set resultado = concat(resultado, '-', contador);  -- Agrega el número actual al texto 'resultado'
+        set contador = contador + 1;             -- Incrementa el contador en 1
 
-        if contador > 10 then
-			leave bucle1;
+        if contador > 10 then                    -- Si el contador pasa de 10...
+			leave bucle1;                        -- ...sale del bucle
 		end if;
-	end loop;
+	end loop;                                   -- Fin del bucle
 
-	select resultado;
+	select resultado;                           -- Muestra el resultado final concatenado
 end//
 
 
-call bucle()//
+call bucle()//                                  -- Llama al procedimiento para ejecutarlo
