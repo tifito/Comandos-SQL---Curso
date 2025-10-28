@@ -1,15 +1,3 @@
-/* Ejemplo WHILE
-	BUCLE WHILE
-    
-    etiqueta: WHILE condicion DO
-		instrucciones;
-        LEAVE etiqueta; -- para dejar el bucle
-		ITERATE etiqueta; -- para volver al principio del bucle
-	END WHILE;
-    */
-    
-
-
 
 delimiter //
 drop procedure if exists bucle_while//   -- Elimina el procedimiento si ya existe
